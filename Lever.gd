@@ -8,6 +8,7 @@ onready var SpriteNode = $Sprite
 onready var LabelNode = $Label
 
 var Active = false
+var Toggled = false
 
 func _ready():
 	SpriteNode.flip_v = On
@@ -23,5 +24,7 @@ func _on_Lever_body_exited(body):
 func _input(event):
 	if Active and event.is_action_pressed("ui_accept"):
 		On = !On
-		ToggleObject.Toggle(On)
 		SpriteNode.flip_v = On
+		if not Toggled:
+			Toggled = true
+			ToggleObject.Toggle(On)
