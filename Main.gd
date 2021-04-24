@@ -19,6 +19,7 @@ func Respawn():
 	FadeOut()
 	yield(FadeTween, "tween_all_completed")
 	Player.set_position(RespawnPoint)
+	Player.Alive = true
 	FadeIn()
 
 func FadeIn():

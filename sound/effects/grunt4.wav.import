@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grunt4.wav-90cb9136d3854b61d4cbf5a7bcfeb666.sample"
+
+[deps]
+
+source_file="res://sound/effects/grunt4.wav"
+dest_files=[ "res://.import/grunt4.wav-90cb9136d3854b61d4cbf5a7bcfeb666.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
