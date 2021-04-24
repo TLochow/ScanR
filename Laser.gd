@@ -6,6 +6,7 @@ var Direction
 var DrawPos = Vector2(0.0, 0.0)
 var CollidingPos = Vector2(0.0, 0.0)
 var Hit = false
+var Permanent = false
 
 var LaserColor
 
@@ -19,11 +20,12 @@ func _process(delta):
 	if is_colliding():
 		CollidingPos = get_collision_point()
 		DrawPos = to_local(CollidingPos)
+		Hit = true
 		var hitObject = get_collider()
 		if "Scanable" in hitObject:
-			Hit = hitObject.Scanable
+			Permanent = hitObject.Scanable
 		else:
-			Hit = false
+			Permanent = true
 	update()
 
 func _draw():
@@ -31,11 +33,12 @@ func _draw():
 
 func _on_Timer_timeout():
 	if Hit:
-		var pixelHandler = get_tree().get_nodes_in_group("PixelHandler")[0]
-		pixelHandler.RegisterPixel(CollidingPos, LaserColor)
-	else:
-		var tempPixel = TEMPORARYPIXELSCENE.instance()
-		tempPixel.set_position(CollidingPos)
-		tempPixel.PixelColor = LaserColor
-		get_parent().add_child(tempPixel)
+		if Permanent:
+			var pixelHandler = get_tree().get_nodes_in_group("PixelHandler")[0]
+			pixelHandler.RegisterPixel(CollidingPos, LaserColor)
+		else:
+			var tempPixel = TEMPORARYPIXELSCENE.instance()
+			tempPixel.set_position(CollidingPos)
+			tempPixel.PixelColor = LaserColor
+			get_parent().add_child(tempPixel)
 	call_deferred("queue_free")
