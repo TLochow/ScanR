@@ -14,6 +14,8 @@ var NoiseLevel = -80.0
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+	elif event.is_action_pressed("restart"):
+		Respawn()
 
 func _ready():
 	randomize()
@@ -54,3 +56,11 @@ func _on_NoiseStarter_body_entered(body):
 	SimplexNoise.period = 20.0
 	SimplexNoise.persistence = 0.8
 	MakeNoise = true
+
+func _on_BoulderDropper_body_entered(body):
+	$Level/Boulders/BoulderBlocker.call_deferred("queue_free")
+	$Level/Boulders/Boulder4.linear_velocity *= 1.0
+	$Level/Boulders/Boulder5.linear_velocity *= 1.0
+	$Level/Boulders/Boulder6.linear_velocity *= 1.0
+	$Level/Boulders/Boulder7.linear_velocity *= 1.0
+	$Level/Boulders/Boulder8.linear_velocity *= 1.0
