@@ -32,6 +32,5 @@ func RegisterPixel(pos, color):
 		x = PixelImageSize.x + x
 	if y < 0.0:
 		y = PixelImageSize.y + y
-	pos = Vector2(x, y)
-	image.set_pixel(pos.x, pos.y, color)
+	image.set_pixel(x, y, color)
 	Sprites[keyPos].texture.set_data(image)

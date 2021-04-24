@@ -22,10 +22,10 @@ func _process(delta):
 		DrawPos = to_local(CollidingPos)
 		Hit = true
 		var hitObject = get_collider()
-		if "Scanable" in hitObject:
-			Permanent = hitObject.Scanable
-		else:
-			Permanent = true
+		var scanable = hitObject.get("Scanable")
+		if scanable == null:
+			scanable = true
+		Permanent = scanable
 	update()
 
 func _draw():
