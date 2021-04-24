@@ -39,7 +39,12 @@ func _physics_process(delta):
 	
 	Motion.x = xMove
 	
-	Motion = move_and_slide(Motion, Vector2(0.0, -1.0))
+	Motion = move_and_slide(Motion, Vector2(0.0, -1.0), false, 4, 0.785398, false)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.collider
+		if collider is RigidBody2D:
+			collider.apply_central_impulse(-collision.normal * 15.0)
 	
 	var moving = false
 	if Motion.x < -1.0:
