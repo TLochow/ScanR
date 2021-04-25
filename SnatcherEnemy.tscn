@@ -17,8 +17,8 @@
 radius = 4.0
 
 [node name="SnatcherEnemy" type="KinematicBody2D"]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

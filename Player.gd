@@ -48,7 +48,7 @@ func _physics_process(delta):
 			var collision = get_slide_collision(i)
 			var collider = collision.collider
 			if collider is RigidBody2D:
-				collider.apply_central_impulse(-collision.normal * 15.0)
+				collider.apply_central_impulse(-collision.normal * 30.0)
 		
 		var moving = false
 		if Motion.x < -1.0:
