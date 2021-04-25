@@ -33,13 +33,13 @@ extents = Vector2( 200, 10 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 16, 144 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 32, 56 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 24, 56 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
@@ -412,7 +412,7 @@ rotation = -0.811578
 position = Vector2( -800, 2336 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Boulders/EndBouldersDangerArea"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -537,7 +537,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/EndTrigger"]
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -569,7 +569,7 @@ margin_left = 5208.0
 margin_top = 32.0
 margin_right = 5430.0
 margin_bottom = 89.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "ScanR Droid Model 1277-B
 You have been deployed for
 a scout mission."
@@ -584,7 +584,7 @@ margin_left = 4504.0
 margin_top = -80.0
 margin_right = 4888.0
 margin_bottom = 17.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "A group of hikers have been
 missing for two days.
 The information we have suggests that they got
@@ -601,7 +601,7 @@ margin_left = 3888.0
 margin_top = -152.0
 margin_right = 4272.0
 margin_bottom = -75.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Visibility will be low.
 You will need to use your scanning module.
 Hold the left mouse button to scan
@@ -617,7 +617,7 @@ margin_left = 3184.0
 margin_top = -328.0
 margin_right = 3568.0
 margin_bottom = -251.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Solid objects will be marked permanently,
 while movable objects, like doors or rocks, will not."
 align = 1
@@ -631,7 +631,7 @@ margin_left = 2928.0
 margin_top = -496.0
 margin_right = 3160.0
 margin_bottom = -419.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Use the right mouse button
 to use levers."
 align = 1
@@ -645,7 +645,7 @@ margin_left = 2320.0
 margin_top = -312.0
 margin_right = 2552.0
 margin_bottom = -235.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 text = "Good luck."
 align = 1
 valign = 1
