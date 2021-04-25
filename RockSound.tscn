@@ -3,9 +3,11 @@
 [ext_resource path="res://sound/effects/rock.wav" type="AudioStream" id=1]
 [ext_resource path="res://RockSound.gd" type="Script" id=2]
 
-[node name="RockSound" type="AudioStreamPlayer2D"]
+[node name="RockSound" type="AudioStreamPlayer2D" groups=[
+"RockSound",
+]]
 stream = ExtResource( 1 )
-autoplay = true
+volume_db = 20.0
 max_distance = 300.0
 bus = "SoundEffects"
 script = ExtResource( 2 )

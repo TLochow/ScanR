@@ -536,7 +536,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 5392, 120 )
+position = Vector2( 1112, -8 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

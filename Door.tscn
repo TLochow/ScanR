@@ -146,6 +146,7 @@ wait_time = 0.1
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+volume_db = 10.0
 bus = "SoundEffects"
 
 [node name="CloseSound" type="AudioStreamPlayer2D" parent="."]

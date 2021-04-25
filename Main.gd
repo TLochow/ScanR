@@ -29,7 +29,7 @@ func _ready():
 
 func _process(delta):
 	if MakeNoise:
-		var goal = ((SimplexNoise.get_noise_1d(OS.get_ticks_msec() * 0.001) - 1.0) * 15.0)
+		var goal = ((SimplexNoise.get_noise_1d(OS.get_ticks_msec() * 0.001) - 1.0) * 15.0) + 20.0
 		NoiseLevel = lerp(NoiseLevel, goal, delta)
 		Noise.volume_db = NoiseLevel
 
@@ -58,11 +58,12 @@ func _on_SavePoint_body_entered(body):
 	RespawnPoint = Player.get_position()
 
 func _on_NoiseStarter_body_entered(body):
-	SimplexNoise.seed = randi()
-	SimplexNoise.octaves = 4
-	SimplexNoise.period = 20.0
-	SimplexNoise.persistence = 0.8
-	MakeNoise = true
+	if not MakeNoise:
+		MakeNoise = true
+		SimplexNoise.seed = randi()
+		SimplexNoise.octaves = 4
+		SimplexNoise.period = 20.0
+		SimplexNoise.persistence = 0.8
 
 func _on_BoulderDropper_body_entered(body):
 	$Level/Boulders/BoulderBlocker.call_deferred("queue_free")

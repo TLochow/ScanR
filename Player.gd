@@ -6,9 +6,12 @@ var LASERSCENE = preload("res://Laser.tscn")
 
 onready var SpriteNode = $Sprite
 onready var AnimationPlayerNode = $AnimationPlayer
+onready var ScannerSound = $ScannerSound
 onready var LaserNode = get_tree().get_nodes_in_group("LaserNode")[0]
 
 var Motion = Vector2(0.0, 0.0)
+
+var ScannerVolume = -80.0
 
 var coyoteTime = 0.0
 var Alive = true
@@ -25,11 +28,15 @@ func _physics_process(delta):
 			SpriteNode.flip_h = false
 		
 		if Input.is_action_pressed("mouse_left"):
+			ScannerVolume = 0.0
 			for i in range(5):
 				var laser = LASERSCENE.instance()
 				laser.set_position(pos)
 				laser.Direction = (mousePos - pos).rotated(rand_range(-0.3, 0.3))
 				LaserNode.call_deferred("add_child", laser)
+		else:
+			ScannerVolume = lerp(ScannerVolume, -80.0, delta)
+		ScannerSound.volume_db = ScannerVolume
 		
 		var isOnFloor = is_on_floor()
 		
