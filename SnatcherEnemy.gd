@@ -40,4 +40,4 @@ func _on_PlayerDetector_body_entered(body):
 func _on_GruntTimer_timeout():
 	var nodeName = "Sounds/Grunt" + str((randi() % 7) + 1)
 	get_node(nodeName).play()
-	GruntTimer.wait_time = rand_range(5.0, 15.0)
+	GruntTimer.wait_time = rand_range(5.0, 10.0)
